@@ -1,0 +1,5676 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+@charset "UTF-8";
+  @import url(https://fonts.googleapis.com/css?family=Google+Sans);
+  a {
+    text-decoration: none;
+  }
+a:link {
+    color: #15c;
+  }
+a:visited {
+    color: #61c;
+  }
+a:active {
+    color: #d14836;
+  }
+a:hover {
+    text-decoration: underline;
+  }
+body::-webkit-scrollbar-track-piece {
+    background-clip: padding-box;
+    background-color: #f5f5f5;
+    border: solid #fff;
+    border-width: 0 0 0 3px;
+    box-shadow:
+      inset 1px 0 0 rgba(0, 0, 0, 0.14),
+      inset -1px 0 0 rgba(0, 0, 0, 0.07);
+  }
+body::-webkit-scrollbar-track-piece:horizontal {
+    border-width: 3px 0 0;
+    box-shadow:
+      inset 0 1px 0 rgba(0, 0, 0, 0.14),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+  }
+body::-webkit-scrollbar-thumb {
+    border-width: 1px 1px 1px 5px;
+  }
+body::-webkit-scrollbar-thumb:horizontal {
+    border-width: 5px 1px 1px;
+  }
+body::-webkit-scrollbar-corner {
+    background-clip: padding-box;
+    background-color: #f5f5f5;
+    border: solid #fff;
+    border-width: 3px 0 0 3px;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.14);
+  }
+input {
+    font-family: inherit;
+  }
+body {
+    background-color: var(--gm3-sys-color-surface, #fff);
+    color: #000;
+    font-weight: 400;
+    font-size: 13px;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    margin: 0;
+  }
+waffle-assistant-kg-apply-to-all-text {
+    display: inline-block;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    line-height: 16px;
+    margin: 1px 1px 1px 4px;
+    vertical-align: middle;
+  }
+html {
+    overflow: hidden;
+    overscroll-behavior-x: none;
+  }
+.grid-fixed-table,
+  .waffle {
+    font-size: 13px;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-style: none;
+    border-spacing: 0;
+    width: 0;
+    cursor: default;
+  }
+.grid-container {
+    background-color: #f8faf8;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+  }
+.ritz.grid-container table.waffle svg {
+    display: block;
+  }
+.freezebar-vertical-handle {
+    width: 4px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAYCAIAAABSh8vJAAAAEElEQVQYV2PYgwQYRjnEcgDquNOBEawK+wAAAABJRU5ErkJggg==")
+      no-repeat;
+  }
+.overlay-container-rtl .freezebar-vertical-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAYCAIAAABSh8vJAAAAEElEQVQYV2PYgwQYRjnEcgDquNOBEawK+wAAAABJRU5ErkJggg==")
+      no-repeat;
+    background-position: 100% 0;
+  }
+.freezebar-active .freezebar-vertical-handle {
+    width: 5px;
+  }
+.freezebar-hover .freezebar-horizontal-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAECAIAAAB+7JowAAAAFUlEQVQY02NYeuzfIEEMo04Z3E4BAHKzu4gtAIWGAAAAAElFTkSuQmCC")
+      no-repeat;
+    z-index: 7;
+  }
+.freezebar-hover .freezebar-vertical-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAYCAIAAABSh8vJAAAAE0lEQVQYV2NYeuwfHDGMcojlAADmjOdhimOdggAAAABJRU5ErkJggg==")
+      no-repeat;
+    z-index: 7;
+  }
+.overlay-container-rtl .freezebar-hover .freezebar-horizontal-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAECAIAAAB+7JowAAAAFUlEQVQY02NYeuzfIEEMo04Z3E4BAHKzu4gtAIWGAAAAAElFTkSuQmCC")
+      no-repeat;
+    background-position: 100% 0;
+  }
+.overlay-container-rtl .freezebar-hover .freezebar-vertical-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAYCAIAAABSh8vJAAAAE0lEQVQYV2NYeuwfHDGMcojlAADmjOdhimOdggAAAABJRU5ErkJggg==")
+      no-repeat;
+    background-position: 100% 0;
+  }
+.freezebar-horizontal-handle {
+    height: 4px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAECAIAAAB+7JowAAAAEklEQVQY02PYM2gAw6hTBrdTAFI0lXC16jX6AAAAAElFTkSuQmCC")
+      no-repeat;
+  }
+.overlay-container-rtl .freezebar-horizontal-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAECAIAAAB+7JowAAAAEklEQVQY02PYM2gAw6hTBrdTAFI0lXC16jX6AAAAAElFTkSuQmCC")
+      no-repeat;
+    background-position: 100% 0;
+  }
+.freezebar-active .freezebar-horizontal-handle {
+    height: 5px;
+  }
+.docs-grille-gm3 .freezebar-horizontal-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAECAYAAADxjg1nAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAiSURBVHgB7c4BDQAACAJBtH+vj6Ut2Ni4BDfAKdAqVONuD6UlA1xby9J5AAAAAElFTkSuQmCC")
+      no-repeat;
+  }
+.docs-grille-gm3 .freezebar-vertical-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAYCAYAAADd5VyeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAiSURBVHgB7cgxEQAACAOxgn9fLwtWDgNdmjEFjI7Wk3DEAm1dA4R92xIIAAAAAElFTkSuQmCC")
+      no-repeat;
+  }
+.docs-grille-gm3 .freezebar-hover .freezebar-horizontal-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAECAYAAADxjg1nAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAiSURBVHgB7c6BCQAACAIw6+ai8/MLQXAXrOb2YahhKnE1AuKtAmdaDfabAAAAAElFTkSuQmCC")
+      no-repeat;
+  }
+.docs-grille-gm3 .freezebar-hover .freezebar-vertical-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAYCAYAAADd5VyeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAiSURBVHgB7cixDQAACAIw9GaN5+tqeICFjo2aXjwJ4lDEAeiwAo9s3Iv4AAAAAElFTkSuQmCC")
+      no-repeat;
+  }
+.docs-grille-gm3 .freezebar-active .freezebar-horizontal-handle,
+  .docs-grille-gm3 .freezebar-horizontal-drop {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAECAYAAADxjg1nAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAkSURBVHgB7c5BDQAACAJA9GtAa9tIWrCxcQmuZu9hqGEqcTUCXU0COe+3SfEAAAAASUVORK5CYII=")
+      no-repeat;
+  }
+.docs-grille-gm3 .freezebar-active .freezebar-vertical-handle,
+  .docs-grille-gm3 .freezebar-vertical-drop {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAYCAYAAADd5VyeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAjSURBVHgB7cghEQAACAPAgSUgtWkElluBmb38qJ7FkyAORRye+AJhADS9ogAAAABJRU5ErkJggg==")
+      no-repeat;
+  }
+.docs-grille-gm3 .overlay-container-rtl .freezebar-horizontal-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAECAYAAADxjg1nAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAiSURBVHgB7c4BDQAACAJBtH+vj6Ut2Ni4BDfAKdAqVONuD6UlA1xby9J5AAAAAElFTkSuQmCC")
+      no-repeat;
+    background-position: 100% 0;
+  }
+.docs-grille-gm3 .overlay-container-rtl .freezebar-vertical-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAYCAYAAADd5VyeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAiSURBVHgB7cgxEQAACAOxgn9fLwtWDgNdmjEFjI7Wk3DEAm1dA4R92xIIAAAAAElFTkSuQmCC")
+      no-repeat;
+  }
+.docs-grille-gm3
+    .overlay-container-rtl
+    .freezebar-hover
+    .freezebar-horizontal-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAECAYAAADxjg1nAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAiSURBVHgB7c6BCQAACAIw6+ai8/MLQXAXrOb2YahhKnE1AuKtAmdaDfabAAAAAElFTkSuQmCC")
+      no-repeat;
+    background-position: 100% 0;
+  }
+.docs-grille-gm3
+    .overlay-container-rtl
+    .freezebar-hover
+    .freezebar-vertical-handle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAYCAYAAADd5VyeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAiSURBVHgB7cixDQAACAIw9GaN5+tqeICFjo2aXjwJ4lDEAeiwAo9s3Iv4AAAAAElFTkSuQmCC")
+      no-repeat;
+  }
+.row-header-wrapper {
+    overflow: hidden;
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+.column-headers-background,
+  .row-headers-background {
+    z-index: 1;
+  }
+.grid-fixed-table td,
+  .waffle td {
+    overflow: hidden;
+    border: 1px solid #e3e3e3;
+    border-color: rgba(0, 0, 0, 0.15);
+    border-width: 0 1px 1px 0;
+    vertical-align: bottom;
+    line-height: inherit;
+    background-color: var(--gm3-sys-color-surface, #fff);
+    padding: 0 3px;
+  }
+.waffle .softmerge {
+    overflow: visible;
+  }
+.grid-fixed-table th,
+  .waffle th {
+    font-weight: 400;
+    background: transparent;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 8pt;
+    color: #1f2020;
+    height: 23px;
+    border: 1px solid #c7c7c7;
+    border-width: 0 1px 1px 0;
+    overflow: hidden;
+    padding: 0;
+  }
+th.row-header {
+    background-color: #efeded;
+    width: 45px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 8pt;
+    color: #343535;
+    line-height: inherit;
+    overflow: hidden;
+  }
+div.column-headers-background {
+    position: absolute;
+    height: 23px;
+  }
+div.row-headers-background {
+    position: absolute;
+    width: 45px;
+  }
+th.column-headers-background,
+  th.row-headers-background {
+    position: relative;
+  }
+td.freezebar-cell,
+  th.freezebar-cell {
+    border-color: var(
+      --gm3-sys-color-surface-container-highest,
+      #dde3ea
+    ) !important;
+    background-color: var(--gm3-sys-color-surface-container-highest, #dde3ea);
+    padding: 0;
+    border-width: 0;
+  }
+.row-header,
+  .row-header-shim {
+    background: #f9f9f9;
+  }
+div.column-headers-background,
+  div.row-headers-background,
+  th.column-headers-background,
+  th.row-headers-background {
+    background: #fff;
+    color: var(--gm3-sys-color-on-surface-variant, #444746);
+    font-family:
+      Google Sans,
+      Roboto,
+      sans-serif;
+    font-size: 12px;
+  }
+.grid-container {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 50vh;
+    box-sizing: border-box;
+  }
+</style>
+<style type="text/css">
+  .ritz .waffle a {
+    color: inherit;
+  }
+  .ritz .waffle .s3 {
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: Arial;
+    font-size: 10pt;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+  }
+  .ritz .waffle .s1 {
+    background-color: #bdbdbd;
+    text-align: left;
+    color: #000000;
+    font-family: Arial;
+    font-size: 10pt;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+  }
+  .ritz .waffle .s4 {
+    background-color: #f3f3f3;
+    text-align: right;
+    color: #000000;
+    font-family: Arial;
+    font-size: 10pt;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+  }
+  .ritz .waffle .s5 {
+    background-color: #f3f3f3;
+    text-align: left;
+    color: #000000;
+    font-family: Arial;
+    font-size: 10pt;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+  }
+  .ritz .waffle .s0 {
+    background-color: #bdbdbd;
+    text-align: right;
+    color: #000000;
+    font-family: Arial;
+    font-size: 10pt;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+  }
+  .ritz .waffle .s2 {
+    background-color: #ffffff;
+    text-align: right;
+    color: #000000;
+    font-family: Arial;
+    font-size: 10pt;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+  }
+  .waffle tbody tr:first-child td,
+  .waffle tbody tr:first-child th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+</style>
+<div style="font-family: Arial; font-size: 14pt; font-weight: bold; letter-spacing: 0.05em; padding: 16px 8px 12px; text-transform: uppercase;">Terraforming Mars Corporation Win Rates</div>
+<div class="ritz grid-container" dir="ltr">
+  <table class="waffle" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th class="row-header freezebar-vertical-handle"></th>
+        <th
+          id="990713024C0"
+          style="width: 227px"
+          class="column-headers-background"
+        >
+          A
+        </th>
+        <th
+          id="990713024C1"
+          style="width: 100px"
+          class="column-headers-background"
+        >
+          B
+        </th>
+        <th
+          id="990713024C2"
+          style="width: 100px"
+          class="column-headers-background"
+        >
+          C
+        </th>
+        <th
+          id="990713024C3"
+          style="width: 100px"
+          class="column-headers-background"
+        >
+          D
+        </th>
+        <th
+          id="990713024C4"
+          style="width: 100px"
+          class="column-headers-background"
+        >
+          E
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="height: 20px">
+        <th
+          id="990713024R0"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">1</div>
+        </th>
+        <td class="s0" dir="ltr" onclick="sortTable(0, false)" style="cursor:pointer" title="Sort by Corporation">Corporation <span class="sort-indicator" data-col="0"></span></td>
+        <td class="s1" dir="ltr" onclick="sortTable(1, true)" style="cursor:pointer" title="Sort by Win rate">Win rate <span class="sort-indicator" data-col="1"></span></td>
+        <td class="s1"></td>
+        <td class="s1" dir="ltr" onclick="sortTable(3, true)" style="cursor:pointer" title="Sort by Play Rate">Play Rate <span class="sort-indicator" data-col="3"></span></td>
+        <td class="s1"></td>
+      </tr>
+      <tr>
+        <th
+          style="height: 3px"
+          class="freezebar-cell freezebar-horizontal-handle"
+        ></th>
+        <td class="freezebar-cell"></td>
+        <td class="freezebar-cell"></td>
+        <td class="freezebar-cell"></td>
+        <td class="freezebar-cell"></td>
+        <td class="freezebar-cell"></td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R1"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">2</div>
+        </th>
+        <td class="s2">Tharsis Republic</td>
+        <td class="s2">45.56%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-0-0 {
+                fill: #93ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-0-0"
+              d="M0.0,0.0L71.36984934650305,0.0L71.36984934650305,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">100.00%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-1-0 {
+                fill: #00ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-1-0"
+              d="M0.0,0.0L94.0,0.0L94.0,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R2"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">3</div>
+        </th>
+        <td class="s4">Valley Trust</td>
+        <td class="s4">43.17%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-2-0 {
+                fill: #acff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-2-0"
+              d="M0.0,0.0L67.62569494802997,0.0L67.62569494802997,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">97.12%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-3-0 {
+                fill: #0fff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-3-0"
+              d="M0.0,0.0L94.0,0.0L94.0,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R3"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">4</div>
+        </th>
+        <td class="s2">Saturn Systems</td>
+        <td class="s2">46.80%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-4-0 {
+                fill: #87ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-4-0"
+              d="M0.0,0.0L73.31892568816264,0.0L73.31892568816264,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">96.54%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-5-0 {
+                fill: #12ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-5-0"
+              d="M0.0,0.0L94.0,0.0L94.0,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R4"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">5</div>
+        </th>
+        <td class="s4">Point Luna</td>
+        <td class="s4">48.79%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-6-0 {
+                fill: #72ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-6-0"
+              d="M0.0,0.0L76.4367448400877,0.0L76.4367448400877,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">88.06%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-7-0 {
+                fill: #3dff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-7-0"
+              d="M0.0,0.0L94.0,0.0L94.0,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R5"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">6</div>
+        </th>
+        <td class="s2">Teractor</td>
+        <td class="s2">42.08%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-8-0 {
+                fill: #b7ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-8-0"
+              d="M0.0,0.0L65.91946840405117,0.0L65.91946840405117,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">85.94%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-9-0 {
+                fill: #48ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-9-0"
+              d="M0.0,0.0L94.0,0.0L94.0,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R6"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">7</div>
+        </th>
+        <td class="s4">Helion</td>
+        <td class="s4">32.27%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-10-0 {
+                fill: #ffe300;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-10-0"
+              d="M0.0,0.0L50.551956815114714,0.0L50.551956815114714,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">78.28%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-11-0 {
+                fill: #6fff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-11-0"
+              d="M0.0,0.0L94.0,0.0L94.0,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R7"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">8</div>
+        </th>
+        <td class="s2">Ecoline</td>
+        <td class="s2">41.68%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-12-0 {
+                fill: #bbff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-12-0"
+              d="M0.0,0.0L65.29870564873077,0.0L65.29870564873077,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">73.59%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-13-0 {
+                fill: #87ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-13-0"
+              d="M0.0,0.0L94.0,0.0L94.0,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R8"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">9</div>
+        </th>
+        <td class="s4">CrediCor</td>
+        <td class="s4">43.56%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-14-0 {
+                fill: #a8ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-14-0"
+              d="M0.0,0.0L68.2470100308642,0.0L68.2470100308642,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">73.02%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-15-0 {
+                fill: #8aff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-15-0"
+              d="M0.0,0.0L94.0,0.0L94.0,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R9"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">10</div>
+        </th>
+        <td class="s2">Inventrix</td>
+        <td class="s2">33.76%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-16-0 {
+                fill: #fff200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-16-0"
+              d="M0.0,0.0L52.883052672802044,0.0L52.883052672802044,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">71.93%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-17-0 {
+                fill: #8fff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-17-0"
+              d="M0.0,0.0L94.0,0.0L94.0,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R10"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">11</div>
+        </th>
+        <td class="s4">Cheung Shing MARS</td>
+        <td class="s4">40.80%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-18-0 {
+                fill: #c4ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-18-0"
+              d="M0.0,0.0L63.917979246765064,0.0L63.917979246765064,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">70.98%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-19-0 {
+                fill: #94ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-19-0"
+              d="M0.0,0.0L94.0,0.0L94.0,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R11"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">12</div>
+        </th>
+        <td class="s2">PhoboLog</td>
+        <td class="s2">37.92%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-20-0 {
+                fill: #e1ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-20-0"
+              d="M0.0,0.0L59.41153786827086,0.0L59.41153786827086,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">68.49%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-21-0 {
+                fill: #a1ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-21-0"
+              d="M0.0,0.0L94.0,0.0L94.0,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R12"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">13</div>
+        </th>
+        <td class="s4">Mining Guild</td>
+        <td class="s4">37.73%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-22-0 {
+                fill: #e3ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-22-0"
+              d="M0.0,0.0L59.109730848861275,0.0L59.109730848861275,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">53.29%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-23-0 {
+                fill: #eeff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-23-0"
+              d="M0.0,0.0L83.49009043904901,0.0L83.49009043904901,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R13"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">14</div>
+        </th>
+        <td class="s2">Robinson Industries</td>
+        <td class="s2">37.95%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-24-0 {
+                fill: #e1ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-24-0"
+              d="M0.0,0.0L59.45988844550261,0.0L59.45988844550261,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">52.50%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-25-0 {
+                fill: #f2ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-25-0"
+              d="M0.0,0.0L82.2571027812502,0.0L82.2571027812502,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R14"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">15</div>
+        </th>
+        <td class="s4">United Nations Mars Initiative</td>
+        <td class="s4">29.88%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-26-0 {
+                fill: #ffcb00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-26-0"
+              d="M0.0,0.0L46.81689877994728,0.0L46.81689877994728,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">50.32%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-27-0 {
+                fill: #fdff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-27-0"
+              d="M0.0,0.0L78.82845924960826,0.0L78.82845924960826,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R15"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">16</div>
+        </th>
+        <td class="s2">Vitor</td>
+        <td class="s2">44.67%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-28-0 {
+                fill: #9cff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-28-0"
+              d="M0.0,0.0L69.98785892065804,0.0L69.98785892065804,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">48.34%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-29-0 {
+                fill: #fff700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-29-0"
+              d="M0.0,0.0L75.73081911603313,0.0L75.73081911603313,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R16"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">17</div>
+        </th>
+        <td class="s4">ThorGate</td>
+        <td class="s4">32.06%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-30-0 {
+                fill: #ffe100;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-30-0"
+              d="M0.0,0.0L50.23202280035078,0.0L50.23202280035078,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">48.19%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-31-0 {
+                fill: #fff600;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-31-0"
+              d="M0.0,0.0L75.4908416524347,0.0L75.4908416524347,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R17"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">18</div>
+        </th>
+        <td class="s2">Poseidon</td>
+        <td class="s2">47.45%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-32-0 {
+                fill: #80ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-32-0"
+              d="M0.0,0.0L74.34097148604202,0.0L74.34097148604202,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">43.18%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-33-0 {
+                fill: #ffdc00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-33-0"
+              d="M0.0,0.0L67.65157784155268,0.0L67.65157784155268,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R18"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">19</div>
+        </th>
+        <td class="s4">Viron</td>
+        <td class="s4">36.13%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-34-0 {
+                fill: #f3ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-34-0"
+              d="M0.0,0.0L56.603757793865334,0.0L56.603757793865334,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">42.07%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-35-0 {
+                fill: #ffd700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-35-0"
+              d="M0.0,0.0L65.91656836335252,0.0L65.91656836335252,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R19"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">20</div>
+        </th>
+        <td class="s2">Manutech</td>
+        <td class="s2">51.71%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-36-0 {
+                fill: #55ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-36-0"
+              d="M0.0,0.0L81.01073532490058,0.0L81.01073532490058,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">39.25%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-37-0 {
+                fill: #ffc800;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-37-0"
+              d="M0.0,0.0L61.4949146375102,0.0L61.4949146375102,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R20"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">21</div>
+        </th>
+        <td class="s4">Morning Star Inc.</td>
+        <td class="s4">36.42%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-38-0 {
+                fill: #f1ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-38-0"
+              d="M0.0,0.0L57.053491460514536,0.0L57.053491460514536,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">38.01%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-39-0 {
+                fill: #ffc200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-39-0"
+              d="M0.0,0.0L59.541994588916076,0.0L59.541994588916076,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R21"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">22</div>
+        </th>
+        <td class="s2">Aridor</td>
+        <td class="s2">39.85%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-40-0 {
+                fill: #ceff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-40-0"
+              d="M0.0,0.0L62.428615133591684,0.0L62.428615133591684,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">34.53%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-41-0 {
+                fill: #ffb000;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-41-0"
+              d="M0.0,0.0L54.09698869071724,0.0L54.09698869071724,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R22"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">23</div>
+        </th>
+        <td class="s4">Interplanetary Cinematics</td>
+        <td class="s4">41.76%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-42-0 {
+                fill: #baff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-42-0"
+              d="M0.0,0.0L65.42846298500768,0.0L65.42846298500768,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">34.02%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-43-0 {
+                fill: #ffad00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-43-0"
+              d="M0.0,0.0L53.294305450405254,0.0L53.294305450405254,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R23"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">24</div>
+        </th>
+        <td class="s2">Factorum</td>
+        <td class="s2">39.79%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-44-0 {
+                fill: #ceff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-44-0"
+              d="M0.0,0.0L62.33658976773384,0.0L62.33658976773384,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">29.92%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-45-0 {
+                fill: #ff9900;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-45-0"
+              d="M0.0,0.0L46.870081166258785,0.0L46.870081166258785,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R24"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">25</div>
+        </th>
+        <td class="s4">Celestic</td>
+        <td class="s4">33.39%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-46-0 {
+                fill: #ffef00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-46-0"
+              d="M0.0,0.0L52.31385124233624,0.0L52.31385124233624,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">29.10%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-47-0 {
+                fill: #ff9400;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-47-0"
+              d="M0.0,0.0L45.5902013604005,0.0L45.5902013604005,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R25"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">26</div>
+        </th>
+        <td class="s2">Tycho Magnetics</td>
+        <td class="s2">41.34%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-48-0 {
+                fill: #beff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-48-0"
+              d="M0.0,0.0L64.76695694836256,0.0L64.76695694836256,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">28.71%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-49-0 {
+                fill: #ff9200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-49-0"
+              d="M0.0,0.0L44.97784507397691,0.0L44.97784507397691,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R26"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">27</div>
+        </th>
+        <td class="s4">Spire</td>
+        <td class="s4">41.86%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-50-0 {
+                fill: #b9ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-50-0"
+              d="M0.0,0.0L65.57725118483413,0.0L65.57725118483413,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">27.86%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-51-0 {
+                fill: #ff8e00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-51-0"
+              d="M0.0,0.0L43.65107312005916,0.0L43.65107312005916,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R27"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">28</div>
+        </th>
+        <td class="s2">Recyclon</td>
+        <td class="s2">34.67%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-52-0 {
+                fill: #fffc00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-52-0"
+              d="M0.0,0.0L54.3234425974833,0.0L54.3234425974833,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">22.67%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-53-0 {
+                fill: #ff7400;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-53-0"
+              d="M0.0,0.0L35.511147889266454,0.0L35.511147889266454,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R28"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">29</div>
+        </th>
+        <td class="s4">Nirgal Enterprises</td>
+        <td class="s4">44.31%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-54-0 {
+                fill: #a0ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-54-0"
+              d="M0.0,0.0L69.41867308721243,0.0L69.41867308721243,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">21.94%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-55-0 {
+                fill: #ff7000;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-55-0"
+              d="M0.0,0.0L34.369186165936,0.0L34.369186165936,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R29"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">30</div>
+        </th>
+        <td class="s2">Philares</td>
+        <td class="s2">41.98%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-56-0 {
+                fill: #b8ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-56-0"
+              d="M0.0,0.0L65.76366928835914,0.0L65.76366928835914,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">21.71%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-57-0 {
+                fill: #ff6f00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-57-0"
+              d="M0.0,0.0L34.018874236315305,0.0L34.018874236315305,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R30"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">31</div>
+        </th>
+        <td class="s4">Pharmacy Union</td>
+        <td class="s4">44.30%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-58-0 {
+                fill: #a0ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-58-0"
+              d="M0.0,0.0L69.40441964034049,0.0L69.40441964034049,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">20.82%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-59-0 {
+                fill: #ff6a00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-59-0"
+              d="M0.0,0.0L32.620384879483076,0.0L32.620384879483076,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R31"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">32</div>
+        </th>
+        <td class="s2">Arklight</td>
+        <td class="s2">30.65%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-60-0 {
+                fill: #ffd300;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-60-0"
+              d="M0.0,0.0L48.020167967825884,0.0L48.020167967825884,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">19.85%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-61-0 {
+                fill: #ff6500;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-61-0"
+              d="M0.0,0.0L31.09225252507468,0.0L31.09225252507468,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R32"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">33</div>
+        </th>
+        <td class="s4">AstroDrill</td>
+        <td class="s4">38.65%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-62-0 {
+                fill: #daff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-62-0"
+              d="M0.0,0.0L60.556474335415906,0.0L60.556474335415906,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">19.16%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-63-0 {
+                fill: #ff6200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-63-0"
+              d="M0.0,0.0L30.0220082046587,0.0L30.0220082046587,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R33"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">34</div>
+        </th>
+        <td class="s2">EcoTec</td>
+        <td class="s2">36.11%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-64-0 {
+                fill: #f4ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-64-0"
+              d="M0.0,0.0L56.57888275015347,0.0L56.57888275015347,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">19.12%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-65-0 {
+                fill: #ff6200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-65-0"
+              d="M0.0,0.0L29.955807525045334,0.0L29.955807525045334,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R34"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">35</div>
+        </th>
+        <td class="s4">Sagitta Frontier Services</td>
+        <td class="s4">45.76%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-66-0 {
+                fill: #91ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-66-0"
+              d="M0.0,0.0L71.68484960552269,0.0L71.68484960552269,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">19.04%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-67-0 {
+                fill: #ff6100;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-67-0"
+              d="M0.0,0.0L29.83443961242084,0.0L29.83443961242084,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R35"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">36</div>
+        </th>
+        <td class="s2">Aphrodite</td>
+        <td class="s2">36.39%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-68-0 {
+                fill: #f1ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-68-0"
+              d="M0.0,0.0L57.01739224370747,0.0L57.01739224370747,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">16.30%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-69-0 {
+                fill: #ff5300;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-69-0"
+              d="M0.0,0.0L25.53415379920301,0.0L25.53415379920301,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R36"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">37</div>
+        </th>
+        <td class="s4">Stormcraft Incorporated</td>
+        <td class="s4">31.86%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-70-0 {
+                fill: #ffdf00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-70-0"
+              d="M0.0,0.0L49.91924379442522,0.0L49.91924379442522,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">15.77%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-71-0 {
+                fill: #ff5000;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-71-0"
+              d="M0.0,0.0L24.706645304036012,0.0L24.706645304036012,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R37"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">38</div>
+        </th>
+        <td class="s2">Arcadian Communities</td>
+        <td class="s2">40.45%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-72-0 {
+                fill: #c7ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-72-0"
+              d="M0.0,0.0L63.37642527552149,0.0L63.37642527552149,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">15.39%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-73-0 {
+                fill: #ff4e00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-73-0"
+              d="M0.0,0.0L24.110839187515776,0.0L24.110839187515776,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R38"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">39</div>
+        </th>
+        <td class="s4">Mons Insurance</td>
+        <td class="s4">41.19%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-74-0 {
+                fill: #c0ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-74-0"
+              d="M0.0,0.0L64.5315698315226,0.0L64.5315698315226,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">14.91%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-75-0 {
+                fill: #ff4c00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-75-0"
+              d="M0.0,0.0L23.357806456913806,0.0L23.357806456913806,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R39"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">40</div>
+        </th>
+        <td class="s2">Palladin Shipping</td>
+        <td class="s2">33.01%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-76-0 {
+                fill: #ffeb00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-76-0"
+              d="M0.0,0.0L51.72066419089086,0.0L51.72066419089086,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">13.75%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-77-0 {
+                fill: #ff4600;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-77-0"
+              d="M0.0,0.0L21.540046129196966,0.0L21.540046129196966,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R40"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">41</div>
+        </th>
+        <td class="s4">Ringcom</td>
+        <td class="s4">48.97%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-78-0 {
+                fill: #71ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-78-0"
+              d="M0.0,0.0L76.71952652028553,0.0L76.71952652028553,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">12.99%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-79-0 {
+                fill: #ff4200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-79-0"
+              d="M0.0,0.0L20.351192257807046,0.0L20.351192257807046,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R41"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">42</div>
+        </th>
+        <td class="s2">Splice</td>
+        <td class="s2">39.45%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-80-0 {
+                fill: #d2ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-80-0"
+              d="M0.0,0.0L61.80565002493992,0.0L61.80565002493992,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">12.94%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-81-0 {
+                fill: #ff4200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-81-0"
+              d="M0.0,0.0L20.276716493242017,0.0L20.276716493242017,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R42"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">43</div>
+        </th>
+        <td class="s4">Lakefront Resorts</td>
+        <td class="s4">40.72%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-82-0 {
+                fill: #c5ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-82-0"
+              d="M0.0,0.0L63.79869164436515,0.0L63.79869164436515,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">11.84%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-83-0 {
+                fill: #ff3c00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-83-0"
+              d="M0.0,0.0L18.5527404616441,0.0L18.5527404616441,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R43"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">44</div>
+        </th>
+        <td class="s2">Polyphemos</td>
+        <td class="s2">31.53%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-84-0 {
+                fill: #ffdc00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-84-0"
+              d="M0.0,0.0L49.397603139251245,0.0L49.397603139251245,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">11.07%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-85-0 {
+                fill: #ff3800;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-85-0"
+              d="M0.0,0.0L17.339061335399172,0.0L17.339061335399172,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R44"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">45</div>
+        </th>
+        <td class="s4">Kuiper Cooperative</td>
+        <td class="s4">31.50%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-86-0 {
+                fill: #ffdb00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-86-0"
+              d="M0.0,0.0L49.347025658727425,0.0L49.347025658727425,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">10.20%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-87-0 {
+                fill: #ff3400;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-87-0"
+              d="M0.0,0.0L15.981947403325293,0.0L15.981947403325293,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R45"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">46</div>
+        </th>
+        <td class="s2">Curiosity II</td>
+        <td class="s2">45.43%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-88-0 {
+                fill: #95ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-88-0"
+              d="M0.0,0.0L71.18054155748169,0.0L71.18054155748169,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">8.73%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-89-0 {
+                fill: #ff2d00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-89-0"
+              d="M0.0,0.0L13.684232148411596,0.0L13.684232148411596,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R46"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">47</div>
+        </th>
+        <td class="s4">Junk Ventures</td>
+        <td class="s4">42.18%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-90-0 {
+                fill: #b6ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-90-0"
+              d="M0.0,0.0L66.08090139267969,0.0L66.08090139267969,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">8.39%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-91-0 {
+                fill: #ff2b00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-91-0"
+              d="M0.0,0.0L13.138076541601375,0.0L13.138076541601375,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R47"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">48</div>
+        </th>
+        <td class="s2">Mars Maths</td>
+        <td class="s2">37.49%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-92-0 {
+                fill: #e6ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-92-0"
+              d="M0.0,0.0L58.74031965727468,0.0L58.74031965727468,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">7.12%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-93-0 {
+                fill: #ff2400;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-93-0"
+              d="M0.0,0.0L11.16033123815225,0.0L11.16033123815225,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R48"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">49</div>
+        </th>
+        <td class="s4">Ambient</td>
+        <td class="s4">42.38%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-94-0 {
+                fill: #b4ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-94-0"
+              d="M0.0,0.0L66.38881956575993,0.0L66.38881956575993,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">7.05%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-95-0 {
+                fill: #ff2400;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-95-0"
+              d="M0.0,0.0L11.05275513378054,0.0L11.05275513378054,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R49"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">50</div>
+        </th>
+        <td class="s2">TerraLabs Research</td>
+        <td class="s2">33.15%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-96-0 {
+                fill: #ffec00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-96-0"
+              d="M0.0,0.0L51.93521525522525,0.0L51.93521525522525,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">7.05%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-97-0 {
+                fill: #ff2400;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-97-0"
+              d="M0.0,0.0L11.041721687178313,0.0L11.041721687178313,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R50"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">51</div>
+        </th>
+        <td class="s4">Beginner Corporation</td>
+        <td class="s4">36.95%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-98-0 {
+                fill: #ebff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-98-0"
+              d="M0.0,0.0L57.890494962768294,0.0L57.890494962768294,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">6.70%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-99-0 {
+                fill: #ff2200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-99-0"
+              d="M0.0,0.0L10.495566080368095,0.0L10.495566080368095,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R51"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">52</div>
+        </th>
+        <td class="s2">Utopia Invest</td>
+        <td class="s2">39.58%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-100-0 {
+                fill: #d0ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-100-0"
+              d="M0.0,0.0L62.00527704485488,0.0L62.00527704485488,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">6.67%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-101-0 {
+                fill: #ff2200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-101-0"
+              d="M0.0,0.0L10.454190655609745,0.0L10.454190655609745,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R52"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">53</div>
+        </th>
+        <td class="s4">Chimera</td>
+        <td class="s4">34.91%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-102-0 {
+                fill: #fffe00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-102-0"
+              d="M0.0,0.0L54.68637483418608,0.0L54.68637483418608,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">6.19%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-103-0 {
+                fill: #ff2000;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-103-0"
+              d="M0.0,0.0L9.703916286658334,0.0L9.703916286658334,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R53"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">54</div>
+        </th>
+        <td class="s2">Septem Tribus</td>
+        <td class="s2">44.88%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-104-0 {
+                fill: #9aff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-104-0"
+              d="M0.0,0.0L70.30737704918033,0.0L70.30737704918033,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">6.01%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-105-0 {
+                fill: #ff1f00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-105-0"
+              d="M0.0,0.0L9.422563398301554,0.0L9.422563398301554,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R54"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">55</div>
+        </th>
+        <td class="s4">Project Workshop</td>
+        <td class="s4">38.33%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-106-0 {
+                fill: #ddff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-106-0"
+              d="M0.0,0.0L60.05323868677906,0.0L60.05323868677906,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">5.95%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-107-0 {
+                fill: #ff1e00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-107-0"
+              d="M0.0,0.0L9.32602074053207,0.0L9.32602074053207,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R55"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">56</div>
+        </th>
+        <td class="s2">Playwrights</td>
+        <td class="s2">39.20%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-108-0 {
+                fill: #d4ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-108-0"
+              d="M0.0,0.0L61.40752189592993,0.0L61.40752189592993,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">5.70%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-109-0 {
+                fill: #ff1d00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-109-0"
+              d="M0.0,0.0L8.923299939550798,0.0L8.923299939550798,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R56"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">57</div>
+        </th>
+        <td class="s4">United Nations Mission One</td>
+        <td class="s4">45.99%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-110-0 {
+                fill: #8fff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-110-0"
+              d="M0.0,0.0L72.05017033137194,0.0L72.05017033137194,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">5.69%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-111-0 {
+                fill: #ff1d00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-111-0"
+              d="M0.0,0.0L8.906749769647458,0.0L8.906749769647458,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R57"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">58</div>
+        </th>
+        <td class="s2">Midas</td>
+        <td class="s2">34.25%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-112-0 {
+                fill: #fff700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-112-0"
+              d="M0.0,0.0L53.662604233482995,0.0L53.662604233482995,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">5.49%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-113-0 {
+                fill: #ff1c00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-113-0"
+              d="M0.0,0.0L8.60057162643567,0.0L8.60057162643567,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R58"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">59</div>
+        </th>
+        <td class="s4">Bio-Sol</td>
+        <td class="s4">33.31%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-114-0 {
+                fill: #ffee00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-114-0"
+              d="M0.0,0.0L52.187079407806195,0.0L52.187079407806195,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">5.23%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-115-0 {
+                fill: #ff1b00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-115-0"
+              d="M0.0,0.0L8.197850825454397,0.0L8.197850825454397,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R59"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">60</div>
+        </th>
+        <td class="s2">Agricola Inc</td>
+        <td class="s2">44.70%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-116-0 {
+                fill: #9cff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-116-0"
+              d="M0.0,0.0L70.03709388590433,0.0L70.03709388590433,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">4.59%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-117-0 {
+                fill: #ff1700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-117-0"
+              d="M0.0,0.0L7.1882904613506575,0.0L7.1882904613506575,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R60"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">61</div>
+        </th>
+        <td class="s4">Martian Insurance Group</td>
+        <td class="s4">34.33%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-118-0 {
+                fill: #fff800;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-118-0"
+              d="M0.0,0.0L53.780188557406696,0.0L53.780188557406696,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">4.54%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-119-0 {
+                fill: #ff1700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-119-0"
+              d="M0.0,0.0L7.119331420086741,0.0L7.119331420086741,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R61"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">62</div>
+        </th>
+        <td class="s2">Crescent Research Association</td>
+        <td class="s2">44.73%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-120-0 {
+                fill: #9cff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-120-0"
+              d="M0.0,0.0L70.0845033801352,0.0L70.0845033801352,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">4.51%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-121-0 {
+                fill: #ff1700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-121-0"
+              d="M0.0,0.0L7.072439272027278,0.0L7.072439272027278,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R62"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">63</div>
+        </th>
+        <td class="s4">Pristar</td>
+        <td class="s4">37.97%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-122-0 {
+                fill: #e1ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-122-0"
+              d="M0.0,0.0L59.48899371069183,0.0L59.48899371069183,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">4.48%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-123-0 {
+                fill: #ff1700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-123-0"
+              d="M0.0,0.0L7.017272039016145,0.0L7.017272039016145,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R63"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">64</div>
+        </th>
+        <td class="s2">Collegium Copernicus</td>
+        <td class="s2">35.84%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-124-0 {
+                fill: #f6ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-124-0"
+              d="M0.0,0.0L56.155006858710564,0.0L56.155006858710564,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">4.28%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-125-0 {
+                fill: #ff1600;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-125-0"
+              d="M0.0,0.0L6.702818810852687,0.0L6.702818810852687,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R64"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">65</div>
+        </th>
+        <td class="s4">Polaris</td>
+        <td class="s4">47.74%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-126-0 {
+                fill: #7dff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-126-0"
+              d="M0.0,0.0L74.79708162334701,0.0L74.79708162334701,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">3.86%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-127-0 {
+                fill: #ff1400;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-127-0"
+              d="M0.0,0.0L6.049087099670758,0.0L6.049087099670758,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R65"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">66</div>
+        </th>
+        <td class="s2">SolBank</td>
+        <td class="s2">38.29%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-128-0 {
+                fill: #ddff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-128-0"
+              d="M0.0,0.0L59.980952380952374,0.0L59.980952380952374,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">3.70%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-129-0 {
+                fill: #ff1300;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-129-0"
+              d="M0.0,0.0L5.7925594661689885,0.0L5.7925594661689885,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R66"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">67</div>
+        </th>
+        <td class="s4">Aurorai</td>
+        <td class="s4">41.44%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-130-0 {
+                fill: #bdff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-130-0"
+              d="M0.0,0.0L64.92971400872517,0.0L64.92971400872517,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">3.63%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-131-0 {
+                fill: #ff1300;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-131-0"
+              d="M0.0,0.0L5.6905000850983924,0.0L5.6905000850983924,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R67"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">68</div>
+        </th>
+        <td class="s2">Nanotech Industries</td>
+        <td class="s2">32.81%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-132-0 {
+                fill: #ffe900;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-132-0"
+              d="M0.0,0.0L51.40505297473513,0.0L51.40505297473513,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">3.60%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-133-0 {
+                fill: #ff1200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-133-0"
+              d="M0.0,0.0L5.640849575388371,0.0L5.640849575388371,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R68"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">69</div>
+        </th>
+        <td class="s4">Luna First Incorporated</td>
+        <td class="s4">47.07%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-134-0 {
+                fill: #84ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-134-0"
+              d="M0.0,0.0L73.7406392694064,0.0L73.7406392694064,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">3.21%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-135-0 {
+                fill: #ff1000;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-135-0"
+              d="M0.0,0.0L5.034010012265906,0.0L5.034010012265906,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R69"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">70</div>
+        </th>
+        <td class="s2">Gagarin Mobile Base</td>
+        <td class="s2">40.54%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-136-0 {
+                fill: #c6ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-136-0"
+              d="M0.0,0.0L63.51585545722713,0.0L63.51585545722713,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">3.18%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-137-0 {
+                fill: #ff1000;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-137-0"
+              d="M0.0,0.0L4.987117864206443,0.0L4.987117864206443,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R70"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">71</div>
+        </th>
+        <td class="s4">Mars Direct</td>
+        <td class="s4">32.11%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-138-0 {
+                fill: #ffe100;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-138-0"
+              d="M0.0,0.0L50.301003344481614,0.0L50.301003344481614,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">3.16%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-139-0 {
+                fill: #ff1000;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-139-0"
+              d="M0.0,0.0L4.94850080109865,0.0L4.94850080109865,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R71"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">72</div>
+        </th>
+        <td class="s2">PolderTECH Dutch</td>
+        <td class="s2">43.85%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-140-0 {
+                fill: #a5ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-140-0"
+              d="M0.0,0.0L68.69299751955734,0.0L68.69299751955734,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">3.08%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-141-0 {
+                fill: #ff1000;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-141-0"
+              d="M0.0,0.0L4.818857803522486,0.0L4.818857803522486,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R72"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">73</div>
+        </th>
+        <td class="s4">Adhai High Orbit Constructions</td>
+        <td class="s4">28.18%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-142-0 {
+                fill: #ffb900;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-142-0"
+              d="M0.0,0.0L44.14313725490196,0.0L44.14313725490196,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">2.99%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-143-0 {
+                fill: #ff0f00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-143-0"
+              d="M0.0,0.0L4.689214805946324,0.0L4.689214805946324,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R73"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">74</div>
+        </th>
+        <td class="s2">Soylent Seedling Systems</td>
+        <td class="s2">32.60%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-144-0 {
+                fill: #ffe700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-144-0"
+              d="M0.0,0.0L51.074120603015075,0.0L51.074120603015075,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">2.80%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-145-0 {
+                fill: #ff0e00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-145-0"
+              d="M0.0,0.0L4.3913117476862045,0.0L4.3913117476862045,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R74"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">75</div>
+        </th>
+        <td class="s4">Habitat Marte</td>
+        <td class="s4">26.41%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-146-0 {
+                fill: #ffa700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-146-0"
+              d="M0.0,0.0L41.36870920193725,0.0L41.36870920193725,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">2.79%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-147-0 {
+                fill: #ff0e00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-147-0"
+              d="M0.0,0.0L4.366486492831195,0.0L4.366486492831195,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R75"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">76</div>
+        </th>
+        <td class="s2">The Archaic Foundation Institute</td>
+        <td class="s2">42.06%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-148-0 {
+                fill: #b7ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-148-0"
+              d="M0.0,0.0L65.89628681177977,0.0L65.89628681177977,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">2.75%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-149-0 {
+                fill: #ff0e00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-149-0"
+              d="M0.0,0.0L4.308560898169505,0.0L4.308560898169505,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R76"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">77</div>
+        </th>
+        <td class="s4">Odyssey</td>
+        <td class="s4">29.08%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-150-0 {
+                fill: #ffc300;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-150-0"
+              d="M0.0,0.0L45.56230319388215,0.0L45.56230319388215,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">2.61%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-151-0 {
+                fill: #ff0d00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-151-0"
+              d="M0.0,0.0L4.087891966124972,0.0L4.087891966124972,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R77"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">78</div>
+        </th>
+        <td class="s2">Steelaris</td>
+        <td class="s2">33.24%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-152-0 {
+                fill: #ffed00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-152-0"
+              d="M0.0,0.0L52.08079440306929,0.0L52.08079440306929,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">2.60%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-153-0 {
+                fill: #ff0d00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-153-0"
+              d="M0.0,0.0L4.074100157872189,0.0L4.074100157872189,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R78"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">79</div>
+        </th>
+        <td class="s4">Robin Haulings</td>
+        <td class="s4">32.17%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-154-0 {
+                fill: #ffe200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-154-0"
+              d="M0.0,0.0L50.39871223377911,0.0L50.39871223377911,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">2.37%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-155-0 {
+                fill: #ff0c00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-155-0"
+              d="M0.0,0.0L3.712754781649265,0.0L3.712754781649265,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R79"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">80</div>
+        </th>
+        <td class="s2">Luna Trade Federation</td>
+        <td class="s2">44.16%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-156-0 {
+                fill: #a2ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-156-0"
+              d="M0.0,0.0L69.18718559703468,0.0L69.18718559703468,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">2.22%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-157-0 {
+                fill: #ff0b00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-157-0"
+              d="M0.0,0.0L3.472777318050836,0.0L3.472777318050836,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R80"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">81</div>
+        </th>
+        <td class="s4">Luna Hyperloop Corporation</td>
+        <td class="s4">34.11%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-158-0 {
+                fill: #fff600;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-158-0"
+              d="M0.0,0.0L53.44534962661235,0.0L53.44534962661235,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">1.73%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-159-0 {
+                fill: #ff0900;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-159-0"
+              d="M0.0,0.0L2.708711140846641,0.0L2.708711140846641,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R81"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">82</div>
+        </th>
+        <td class="s2">Hecate Speditions</td>
+        <td class="s2">51.13%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-160-0 {
+                fill: #5aff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-160-0"
+              d="M0.0,0.0L80.10469011725293,0.0L80.10469011725293,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">1.40%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-161-0 {
+                fill: #ff0700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-161-0"
+              d="M0.0,0.0L2.1956558738431022,0.0L2.1956558738431022,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R82"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">83</div>
+        </th>
+        <td class="s4">Incite</td>
+        <td class="s4">35.84%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-162-0 {
+                fill: #f6ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-162-0"
+              d="M0.0,0.0L56.155844155844164,0.0L56.155844155844164,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">1.36%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-163-0 {
+                fill: #ff0700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-163-0"
+              d="M0.0,0.0L2.1239384709286293,0.0L2.1239384709286293,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R83"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">84</div>
+        </th>
+        <td class="s2">Intragen Sanctuary Headquarters</td>
+        <td class="s2">27.09%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-164-0 {
+                fill: #ffae00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-164-0"
+              d="M0.0,0.0L42.447643979057595,0.0L42.447643979057595,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">1.35%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-165-0 {
+                fill: #ff0700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-165-0"
+              d="M0.0,0.0L2.1073883010252894,0.0L2.1073883010252894,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R84"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">85</div>
+        </th>
+        <td class="s4">Kingdom of Tauraro</td>
+        <td class="s4">40.68%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-166-0 {
+                fill: #c5ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-166-0"
+              d="M0.0,0.0L63.73972602739727,0.0L63.73972602739727,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">1.29%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-167-0 {
+                fill: #ff0700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-167-0"
+              d="M0.0,0.0L2.0136040049063624,0.0L2.0136040049063624,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R85"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">86</div>
+        </th>
+        <td class="s2">Mind Set Mars</td>
+        <td class="s2">31.04%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-168-0 {
+                fill: #ffd700;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-168-0"
+              d="M0.0,0.0L48.628950050968406,0.0L48.628950050968406,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">1.15%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-169-0 {
+                fill: #ff0600;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-169-0"
+              d="M0.0,0.0L1.8039685194640562,0.0L1.8039685194640562,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R86"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">87</div>
+        </th>
+        <td class="s4">The Grand Luna Capital Group</td>
+        <td class="s4">30.03%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-170-0 {
+                fill: #ffcc00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-170-0"
+              d="M0.0,0.0L47.04926624737945,0.0L47.04926624737945,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">1.12%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-171-0 {
+                fill: #ff0600;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-171-0"
+              d="M0.0,0.0L1.7543180097540363,0.0L1.7543180097540363,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R87"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">88</div>
+        </th>
+        <td class="s2">Athena</td>
+        <td class="s2">39.96%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-172-0 {
+                fill: #ccff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-172-0"
+              d="M0.0,0.0L62.60842627013631,0.0L62.60842627013631,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">0.95%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-173-0 {
+                fill: #ff0500;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-173-0"
+              d="M0.0,0.0L1.4839985679994836,0.0L1.4839985679994836,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R88"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">89</div>
+        </th>
+        <td class="s4">The Darkside of The Moon Syndicate</td>
+        <td class="s4">36.05%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-174-0 {
+                fill: #f4ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-174-0"
+              d="M0.0,0.0L56.47286821705426,0.0L56.47286821705426,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">0.91%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-175-0 {
+                fill: #ff0500;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-175-0"
+              d="M0.0,0.0L1.4233146116872373,0.0L1.4233146116872373,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R89"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">90</div>
+        </th>
+        <td class="s2">Hadesphere</td>
+        <td class="s2">51.13%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-176-0 {
+                fill: #5aff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-176-0"
+              d="M0.0,0.0L80.10558069381598,0.0L80.10558069381598,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">0.78%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-177-0 {
+                fill: #ff0400;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-177-0"
+              d="M0.0,0.0L1.2191958495460442,0.0L1.2191958495460442,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R90"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">91</div>
+        </th>
+        <td class="s4">Keplertec</td>
+        <td class="s4">46.10%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-178-0 {
+                fill: #8eff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-178-0"
+              d="M0.0,0.0L72.22222222222223,0.0L72.22222222222223,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">0.74%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-179-0 {
+                fill: #ff0400;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-179-0"
+              d="M0.0,0.0L1.1667869781854676,0.0L1.1667869781854676,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R91"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">92</div>
+        </th>
+        <td class="s2">Eris</td>
+        <td class="s2">51.64%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-180-0 {
+                fill: #55ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-180-0"
+              d="M0.0,0.0L80.9016393442623,0.0L80.9016393442623,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">0.64%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-181-0 {
+                fill: #ff0300;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-181-0"
+              d="M0.0,0.0L1.0095603641037378,0.0L1.0095603641037378,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R92"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">93</div>
+        </th>
+        <td class="s4">Jenson-Boyle &amp; Co</td>
+        <td class="s4">41.26%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-182-0 {
+                fill: #bfff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-182-0"
+              d="M0.0,0.0L64.64183381088826,0.0L64.64183381088826,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">0.61%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-183-0 {
+                fill: #ff0300;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-183-0"
+              d="M0.0,0.0L0.9626682160442747,0.0L0.9626682160442747,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R93"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">94</div>
+        </th>
+        <td class="s2">Arborist Collective</td>
+        <td class="s2">39.83%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-184-0 {
+                fill: #ceff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-184-0"
+              d="M0.0,0.0L62.39732569245463,0.0L62.39732569245463,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">0.61%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-185-0 {
+                fill: #ff0300;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-185-0"
+              d="M0.0,0.0L0.9626682160442747,0.0L0.9626682160442747,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R94"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">95</div>
+        </th>
+        <td class="s4">Tempest Consultancy</td>
+        <td class="s4">44.54%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-186-0 {
+                fill: #9eff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-186-0"
+              d="M0.0,0.0L69.78367748279253,0.0L69.78367748279253,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">0.60%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-187-0 {
+                fill: #ff0300;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-187-0"
+              d="M0.0,0.0L0.9350845995387079,0.0L0.9350845995387079,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R95"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">96</div>
+        </th>
+        <td class="s2">Henkei Genetics</td>
+        <td class="s2">35.15%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-188-0 {
+                fill: #fdff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-188-0"
+              d="M0.0,0.0L55.07070707070707,0.0L55.07070707070707,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">0.58%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-189-0 {
+                fill: #ff0300;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-189-0"
+              d="M0.0,0.0L0.9102593446836981,0.0L0.9102593446836981,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R96"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">97</div>
+        </th>
+        <td class="s4">Voltagon</td>
+        <td class="s4">38.54%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-190-0 {
+                fill: #dbff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-190-0"
+              d="M0.0,0.0L60.376522702104104,0.0L60.376522702104104,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">0.53%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-191-0 {
+                fill: #ff0300;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-191-0"
+              d="M0.0,0.0L0.8302668568175551,0.0L0.8302668568175551,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R97"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">98</div>
+        </th>
+        <td class="s2">Demetron Labs</td>
+        <td class="s2">39.09%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-192-0 {
+                fill: #d5ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-192-0"
+              d="M0.0,0.0L61.24242424242425,0.0L61.24242424242425,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">0.39%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-193-0 {
+                fill: #ff0200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-193-0"
+              d="M0.0,0.0L0.6068395631224655,0.0L0.6068395631224655,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R98"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">99</div>
+        </th>
+        <td class="s4">Anubis Securities</td>
+        <td class="s4">39.62%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-194-0 {
+                fill: #d0ff00;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-194-0"
+              d="M0.0,0.0L62.07547169811321,0.0L62.07547169811321,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">0.37%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-195-0 {
+                fill: #ff0200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-195-0"
+              d="M0.0,0.0L0.5847726699180121,0.0L0.5847726699180121,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R99"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">100</div>
+        </th>
+        <td class="s2">Aeron Genomics</td>
+        <td class="s2">32.11%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-196-0 {
+                fill: #ffe100;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-196-0"
+              d="M0.0,0.0L50.29824561403509,0.0L50.29824561403509,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s2">0.33%</td>
+        <td class="s3">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-197-0 {
+                fill: #ff0200;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-197-0"
+              d="M0.0,0.0L0.5240887136057656,0.0L0.5240887136057656,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+      <tr style="height: 20px">
+        <th
+          id="990713024R100"
+          style="height: 20px"
+          class="row-headers-background"
+        >
+          <div class="row-header-wrapper" style="line-height: 20px">101</div>
+        </th>
+        <td class="s4">Mars Frontier Alliance</td>
+        <td class="s4">19.85%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-198-0 {
+                fill: #ff6400;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-198-0"
+              d="M0.0,0.0L31.094147582697204,0.0L31.094147582697204,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+        <td class="s4">0.23%</td>
+        <td class="s5">
+          <svg
+            width="94.0"
+            height="16.0"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .SSparkchart990713024-199-0 {
+                fill: #ff0100;
+                fill-opacity: 1;
+              }
+            </style>
+            <defs></defs>
+            <path
+              class="SSparkchart990713024-199-0"
+              d="M0.0,0.0L0.3613453762229226,0.0L0.3613453762229226,16.0L0.0,16.0Z"
+            />
+          </svg>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="font-family: Arial; font-size: 9pt; color: #777; padding: 20px 8px 8px; max-width: 600px; border-top: 1px solid #ddd; margin-top: 12px; margin-left: 32px;">
+    <p style="margin: 0 0 6px;">* A corporation's play is counted in any game in which it was active, including those where it was acquired through a Merger.</p>
+    <p style="margin: 0 0 6px;">* Only multiplayer games are included.</p>
+    <p style="margin: 0;">* Play rate is relative — Tharsis Republic is played more than any other corporation, so it gets 100%. Every other corporation's play rate is a percentage of that.</p>
+    <p style="margin: 12px 0 0; color: #aaa;">March 26, 2026</p>
+  </div>
+</div>
+<script>
+  let sortCol = null;
+  let sortDir = 'asc';
+
+  function sortTable(colIndex, numeric) {
+    if (sortCol === colIndex) {
+      sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+    } else {
+      sortCol = colIndex;
+      sortDir = numeric ? 'desc' : 'asc';
+    }
+
+    const tbody = document.querySelector('table.waffle tbody');
+    const allRows = Array.from(tbody.querySelectorAll('tr'));
+    const headerRow = allRows[0];
+    const freezebarRow = allRows[1];
+    const dataRows = allRows.slice(2);
+
+    dataRows.sort((a, b) => {
+      const aCell = a.querySelectorAll('td')[colIndex];
+      const bCell = b.querySelectorAll('td')[colIndex];
+      const aVal = aCell ? aCell.textContent.trim() : '';
+      const bVal = bCell ? bCell.textContent.trim() : '';
+      if (numeric) {
+        const aNum = parseFloat(aVal.replace('%', '')) || 0;
+        const bNum = parseFloat(bVal.replace('%', '')) || 0;
+        return sortDir === 'asc' ? aNum - bNum : bNum - aNum;
+      } else {
+        return sortDir === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+      }
+    });
+
+    dataRows.forEach(row => tbody.appendChild(row));
+
+    document.querySelectorAll('.sort-indicator').forEach(el => {
+      const col = parseInt(el.getAttribute('data-col'));
+      el.textContent = col === colIndex ? (sortDir === 'asc' ? ' ▲' : ' ▼') : '';
+    });
+  }
+  document.addEventListener('DOMContentLoaded', () => sortTable(1, true));
+</script>
